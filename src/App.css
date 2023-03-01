@@ -4,9 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 /*Using the universal selector to set whole page styling*/
+body {
+  background-color: rgb(73, 73, 73);
+}
+
 * {
   font-family: 'Roboto Mono', monospace;
-  background-color: rgb(73, 73, 73);
   color: white;
   margin: 0;
   padding: 0;
@@ -20,6 +23,34 @@
   justify-content: center;
   margin: 5rem 0 2.5rem 0;
 }
+
+/*Styling for the info icon*/
+img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3.2rem;
+  margin: 1rem 1rem 0 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/*Styling the information div that appears when hovering over the icon*/
+.information {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15rem;
+  margin: 1rem 1rem 0 0;
+  padding: 3rem 1rem 1rem 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: rgb(135, 135, 135);
+  z-index: 2;
+}
+
+img:hover ~ .information {display: block;}
 
 /*Styling h1 elements*/
 h1 {
@@ -48,6 +79,7 @@ h1 {
   margin-left: 0.5rem;
   padding-left: 0.5rem;
   border: 2px solid white;
+  background-color: rgb(135, 135, 135);
 }
 
 /*styling for the elements with the class name Buttons and inputButtons*/
@@ -65,6 +97,7 @@ h1 {
   height: 2rem;
   border: 2px solid white;
   cursor: pointer;
+  background-color: rgb(73, 73, 73);
 }
 
 /*Setting unique styling for the inputButtons buttons*/
@@ -75,7 +108,7 @@ h1 {
 /*Setting unique styling for the Buttons buttons*/
 .Buttons > button {
   margin-top: 4rem;
-  background-color: rgb(119, 119, 119);
+  background-color: rgb(135, 135, 135);
 }
 
 /*Setting hover effects on all buttons*/

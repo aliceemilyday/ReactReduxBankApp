@@ -10,6 +10,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { interest, charges, withdraw, deposit } from './store/counter';
 //Importing useState hook from react to get the state from the user input
 import { useState } from 'react';
+//Importing information icon
+import infoIcon from './Images/infoIcon.jpg';
 //Importing external styling sheet
 import './App.css';
 
@@ -68,6 +70,11 @@ function App() {
   return (
     <div>
       <div className="App">
+        <img src={infoIcon} alt="information icon"></img>
+        <div className='information'>
+          Deposit and withdraw money from your bank balance using the input box and clicking the relevant button.<br/>
+          To add 5% interest to your balance click 'Add Interest'.<br/>
+          To deduct 15% click the 'Charges' button.</div>
         <h2>Cash Balance:</h2>
         <h1>£{count.toFixed(2)}</h1> {/*Displaying the count variable which was initiated using the useSelector function. This variable outputs
                                       the final calculated value after the action creators have been called. I have used toFixed(2) to set the
@@ -85,8 +92,8 @@ function App() {
           <button type="submit" onClick={handleWithdraw}>Withdraw</button>
         </div>
         <div className='Buttons'> {/*Below are the buttons that when clicked, will trigger either the handleInterest or handleCharges functions*/}
-          <button onClick={handleInterest}>Add Interest</button>
-          <button onClick={handleCharges}>Charges</button>
+          <button onClick={handleInterest} title="Add 5% Interest To Balance">Add Interest</button>
+          <button onClick={handleCharges} title="Subtract 15% From Balance">Charges</button>
         </div>
       </form>
     </div>
